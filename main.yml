@@ -15,20 +15,6 @@
         name: '*'
         state: latest
 
-    - name: Add admin group
-      group:
-        name: admin
-        state: present
-
-    - name: Add local user
-      user:
-        name: admin
-        group: admin
-        shell: /bin/bash
-        home: /home/admin
-        create_home: yes
-        state: present
-
     - name: Remove undesirable packages
       package:
         name: "{{ unnecessary_software }}"
